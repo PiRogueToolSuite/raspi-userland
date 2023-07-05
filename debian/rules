@@ -16,5 +16,9 @@ override_dh_auto_build:
 
 # Let .install dispatch files, dh_auto_install would fail:
 override_dh_auto_install:
+	# Delete RUNPATH related to the build directory:
+	chrpath build-dir/lib/libvchiq_arm.so -d
+	# Set RUNPATH to private directory:
 	chrpath build-dir/bin/vcgencmd -r /usr/lib/raspi-vcgencmd
+	# Rename to make sure no conflicts are possible:
 	mv build-dir/bin/vcgencmd build-dir/bin/raspi-vcgencmd
