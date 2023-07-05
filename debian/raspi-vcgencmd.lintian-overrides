@@ -1,0 +1,2 @@
+# It's fine to hide private libraries under a custom library search path:
+raspi-vcgencmd: custom-library-search-path RUNPATH /usr/lib/raspi-vcgencmd [usr/bin/raspi-vcgencmd]
