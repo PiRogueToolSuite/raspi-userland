@@ -1,5 +1,5 @@
-raspi-userland (0~git20230705) UNRELEASED; urgency=medium
+raspi-userland (0~git20230705) bookworm; urgency=medium
 
   * Initial snapshot.
 
- -- Cyril Brulebois <cyril@debamax.com>  Wed, 05 Jul 2023 10:43:25 +0200
+ -- Cyril Brulebois <cyril@debamax.com>  Wed, 05 Jul 2023 11:25:46 +0200
