@@ -1,0 +1,19 @@
+Source: raspi-userland
+Section: admin
+Priority: optional
+Maintainer: Cyril Brulebois <cyril@debamax.com>
+Standards-Version: 4.3.0
+Build-Depends:
+ debhelper-compat (= 13),
+ cmake,
+ pkg-config,
+ chrpath,
+
+Package: raspi-vcgencmd
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: VideoCore query tool for Raspberry devices
+ vcgencmd is a command line utility that can get various pieces of
+ information from the VideoCore GPU on the Raspberry Pi.

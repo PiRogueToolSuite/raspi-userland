@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+# Use a static build directory (because that's referenced from some
+# CMakeLists.txt files) that's not "build", which would trigger many
+# re-entries at the make level:
+%:
+	dh $@ -Bbuild-dir
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DVIDEOCORE_BUILD_DIR=$(CURDIR)/build-dir
+
+# Only build the binary we're after, which will build the libraries it
+# needs. Building all the things would trigger a failure to build.
+override_dh_auto_build:
+	dh_auto_build -- -C host_applications/linux/apps/gencmd
+
+# Let .install dispatch files, dh_auto_install would fail:
+override_dh_auto_install:
+	chrpath build-dir/bin/vcgencmd -r /usr/lib/raspi-vcgencmd
+	mv build-dir/bin/vcgencmd build-dir/bin/raspi-vcgencmd

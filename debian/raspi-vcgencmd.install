@@ -1,0 +1,4 @@
+build-dir/bin/raspi-vcgencmd  usr/bin
+build-dir/lib/libvchiq_arm.so usr/lib/raspi-vcgencmd
+build-dir/lib/libvcos.so      usr/lib/raspi-vcgencmd
+
